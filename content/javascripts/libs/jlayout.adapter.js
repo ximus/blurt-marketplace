@@ -83,16 +83,18 @@ if (jLayout) {
 					elementWrapper = wrap(element, o.resize);
 				o.items = [];
 				o.columns = 3;
+				o.hgap = 1;
+				o.vgap = 1;
 				element.children().each(function (i) { 
 					o.items[i] = wrap($(this));
 				});
 				
 				elementWrapper.preferredSize = function () {
-				  return { width: $(window).width(), height: $(window).height() }; 
+				  return { width: $(window).width(), height: 'auto' }; 
 				} 
         console.log({ width: $(window).width(), height: $(window).height() }); 
 
-         elementWrapper.bounds(elementWrapper.preferredSize());
+         // elementWrapper.bounds(elementWrapper.preferredSize());
 
                 
 				jLayout.grid(o).layout(elementWrapper);

@@ -1,6 +1,6 @@
 /*!
  * jLayout Grid Layout - JavaScript Layout Algorithms v0.41
- *
+ * !MODIFIED!
  * Licensed under the new BSD License.
  * Copyright 2008-2009, Bram Stein
  * All rights reserved.
@@ -40,11 +40,19 @@
 			var i, j,
 				insets = container.insets(),
 				x = insets.left,
-				y = insets.top,
-				width = (container.bounds().width - (insets.left + insets.right) - (my.columns - 1) * my.hgap) / my.columns,
-				height = (container.bounds().height - (insets.top + insets.bottom) - (my.rows - 1) * my.vgap) / my.rows;
-        // console.log(my.columns, my.rows, insets, container.bounds(), my.vgap, my.hgap);
-        //         console.log(height);       
+				y = insets.top, 
+				height, width;
+				
+			if (container.preferredSize().height === 'auto')
+				height = my.items[0].preferredSize().height;
+			else
+			  height = (container.bounds().height - (insets.top + insets.bottom) - (my.rows - 1) * my.vgap) / my.rows;
+      
+      width = (container.bounds().width - (insets.left + insets.right) - (my.columns - 1) * my.hgap) / my.columns;
+
+      // Math with integers should be faster
+      width  = Math.floor(width);
+      height = Math.floor(height);  
 
 			for (i = 0, j = 1; i < my.items.length; i += 1, j += 1) {
 				my.items[i].bounds({'x': x, 'y': y, 'width': width, 'height': height});
@@ -91,6 +99,12 @@
 				};
 			};
 		}
+		
+		function roundNumber(number, digits) {
+        var multiple = Math.pow(10, digits);
+        var rndedNum = Math.round(number * multiple) / multiple;
+        return rndedNum;
+    }
 
 		// this creates the min and preferred size methods, as they
 		// only differ in the function they call.
