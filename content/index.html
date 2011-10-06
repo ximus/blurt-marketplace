@@ -1,0 +1,82 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Blurt Marketplace Demo</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+  <!-- Home screen icon  Mathias Bynens http://goo.gl/6nVq0 -->
+  <!-- For iPhone 4 with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/h/apple-touch-icon.png">
+  <!-- For first-generation iPad: -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/m/apple-touch-icon.png">
+  <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+  <link rel="apple-touch-icon-precomposed" href="images/l/apple-touch-icon-precomposed.png">
+  <!-- For nokia devices: -->
+  <link rel="shortcut icon" href="images/l/apple-touch-icon.png">
+
+  <!--the script prevents links from opening in mobile safari. https://gist.github.com/1042026 -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
+  <link rel="apple-touch-startup-image" href="images/l/splash.png">
+
+  <!-- more tags for your 'head' to consider https://gist.github.com/849231 -->
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="stylesheets/main.css?v=1">
+
+  <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
+  <script src="javascripts/libs/modernizr-custom.js" defer></script>
+  <!-- Media Queries Polyfill https://github.com/shichuan/mobile-html5-boilerplate/wiki/Media-Queries-Polyfill -->
+  <script>Modernizr.mq('(min-width:0)') || document.write('<script src="javascripts/libs/respond.min.js"><\/script>')</script>
+  
+  <!-- JavaScript *not* at the bottom because this is app is nothing without javascript -->
+  <script src="javascripts/main.js" type="text/javascript" defer></script>
+</head>
+
+<body>
+
+  <div id="marketplace"></div>
+  
+  <div id="item-info">
+    <div class="front">
+      <img src="">
+      <div class="sidebar">
+        <p class="title"></p>
+        <p class="short-desc"></p>
+        <div class="controls">
+          <p class="time-left"></p>
+          <p class="buy-button">Buy Now!</p>
+          <p class="info-button">More Info</p>
+        </div>
+      </div>
+    </div>
+    <div class="back">
+      <p class="backbutton">&larr; Back</p>
+      <p class="title"></p>
+      <p class="description"></p>
+      <div class="controls">
+        <p class="time-left"></p>
+        <p class="buy-button">Buy Now!</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // iPhone Scale Bug Fix, read this when using http://www.blog.highub.com/mobile-2/a-fix-for-iphone-viewport-scale-bug/
+    // window.onload = function() {
+    //     MBP.scaleFix();
+    // }     
+  </script>
+  
+  <!--<script type="text/javascript" src="https://getfirebug.com/firebug-lite.js#startOpened"></script>-->
+
+</body>
+</html>

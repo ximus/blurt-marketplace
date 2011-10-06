@@ -1,0 +1,35 @@
+#!/usr/bin/env ruby
+
+compile '/stylesheets/main/' do
+  filter :sprockets
+end
+
+compile '/javascripts/main/' do
+  filter :sprockets
+end
+
+compile '/javascripts/*/' do
+end    
+
+compile '*' do
+  if !item.binary?
+    filter :erubis
+  end
+end
+
+route '/stylesheets/main/' do                                                             
+  '/stylesheets/main.css'
+end
+
+route '/javascripts/main/' do
+  '/javascripts/main.js'
+end
+
+# Just copy the rest over
+route '*' do
+  if item[:content_filename]
+    item[:content_filename].gsub(/^content/, '')
+  end
+end
+
+layout '*', :erb
