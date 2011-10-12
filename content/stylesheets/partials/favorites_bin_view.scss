@@ -1,0 +1,36 @@
+#favorites-bin {
+	z-index: 800;
+	position: absolute;
+	border-radius: 8px;
+	background: red;
+	left: 100%;
+	top: 0px;
+	height: 90%;
+	max-height: 400px;
+	width: 55px;
+	-webkit-box-shadow: 0 0 16px black;
+	-webkit-transform: translateX(0);
+	-webkit-transition-property: -webkit-transform, -webkit-box-shadow;
+	-webkit-transition-duration: .1s, .1s;
+	-webkit-transition-timing-function: ease-out, ease;
+	&.active {
+		-webkit-transform: translateX(-32px);
+	}
+
+	&.drop {
+		-webkit-box-shadow: 0 0 12px white;
+		-webkit-transform: translateX(-47px);
+		background: green;
+	}
+
+	p.label {
+		position: absolute;
+		left: 4px;
+		top: 4%;
+		font-size: 1.5em;
+		font-weight: 300;
+		-webkit-transform-origin: left bottom;
+		-webkit-transform: rotate(90deg);
+	}
+
+}

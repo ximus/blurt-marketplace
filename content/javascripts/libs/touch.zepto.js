@@ -1,6 +1,5 @@
-//     Zepto.js
-//     (c) 2010, 2011 Thomas Fuchs
-//     Zepto.js may be freely distributed under the MIT license.
+// I forked zepto touch because it didn't give me access to the initial touch event object
+// for tap
 
 (function($){
   var touch = {}, touchTimeout;

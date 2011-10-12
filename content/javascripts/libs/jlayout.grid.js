@@ -77,7 +77,15 @@
 				}
 				my.items[i].doLayout();
 			}
-			return container;
+			
+			if (container.preferredSize().height === 'auto') {
+			  container.bounds({
+  			  width: (width + my.hgap) * my.columns,
+  			  height: (height + my.vgap) * my.rows
+  			})
+  			return container;
+  	  }
+  	  
 		};
 
 		function typeLayout(type) {

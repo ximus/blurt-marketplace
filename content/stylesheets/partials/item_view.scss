@@ -1,0 +1,136 @@
+ul {
+	-webkit-perspective: 900;
+	-webkit-transform-style: flat; 
+	li {
+		position: absolute;
+		overflow: hidden;
+		background: black;
+
+		-webkit-transition-property: border-width, -webkit-box-shadow;
+		-webkit-transition-duration: .1s, .1s;
+		-webkit-transition-timing-function: none, none;
+		-webkit-box-sizing: border-box;
+	}
+
+	li.dragging {
+		-webkit-box-shadow: 0 0 12px black;
+		z-index: 1000;
+
+		-webkit-animation-name: wobble;
+	  -webkit-animation-duration: .3s;
+	  -webkit-animation-iteration-count: 1;
+	}
+
+	li.dragging.on-target {
+		border: 1px solid #4bbdff;
+		-webkit-box-shadow: 0 0 12px #4bbdff;
+	}
+
+	p.title {
+		position: absolute;
+		bottom: 12px;
+		left: 10px;
+		right: 10px;
+		z-index: 1;
+		background: rgba(0, 0, 0, 0.5);
+		padding: 6px 8px;
+		color: #EEE;
+		font-weight: 300;
+		opacity: .8;
+		font-size: .9em;
+		border-radius: 5px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-align: center;
+		text-overflow: ellipsis;
+	}
+
+	img {
+		margin-top: -10%;
+		height: 125%;
+		left: -55%;
+		position: absolute;
+	}
+
+}
+// @-webkit-keyframes wobble {
+//  from {
+//    -webkit-transform: scale(1);
+//  }
+// 
+//  50% {
+//    -webkit-transform: scale(1.1);
+//  }
+// 
+//  75% {
+//    -webkit-transform: scale(1);
+//  }
+// 
+//  100% {
+//    -webkit-transform: scale(1.1); 
+//  }
+// }
+
+@-webkit-keyframes wobble {
+ from {
+   -webkit-transform: rotate3d(0,1,1,0);
+ }
+
+ 50% {
+   -webkit-transform: rotate3d(0,1,1,6deg);
+ }
+
+ 75% {
+   -webkit-transform: rotate3d(0,1,1,-4deg);
+ }
+
+ to {
+   -webkit-transform: rotate3d(0,1,1,0); 
+ }
+} 
+
+/* Smartphones (landscape) ----------- */
+@media only screen
+and (min-width : 321px) {
+
+	li {
+		height: 160px;
+	}
+
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen
+and (max-width : 320px) {
+
+	li {
+		height: 107px;
+	}
+
+}
+
+/* iPads (landscape) ----------- */ 
+@media only screen
+and (min-device-width : 768px) {
+
+	li {
+		height: 192px;
+	}
+
+}
+
+/* iPads (portrait) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+
+	ul img {
+		left: -40%;
+	}
+
+	li {
+		height: 171px;
+	}
+
+}

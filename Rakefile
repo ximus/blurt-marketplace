@@ -1,6 +1,14 @@
 require 'nanoc3/tasks'                                                                  
 
-task :deploy => ['optimize:all', 'deploy:rsync']
+task :deploy => [
+  'optimize:all', 
+  'optimize:html',
+  # 'optimize:css',
+  'optimize:js',
+  'optimize:jpeg',
+  'optimize:png',
+  'deploy:rsync' 
+]
 
 namespace :optimize do
   desc 'Optimise JPEG images in output/images directory using jpegoptim'
@@ -34,5 +42,5 @@ namespace :optimize do
   end
 
   desc 'Optimise all image, CSS, JavaScript, HTML and XML files in the output directory'
-  task :all => [:jpeg, :png, :js]
+  task :all => [:jpeg, :png,  :js]
 end

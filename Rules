@@ -25,6 +25,12 @@ route '/javascripts/main/' do
   '/javascripts/main.js'
 end
 
+route '/javascripts/*' do
+end
+
+route '/stylesheets/*' do
+end
+
 # Just copy the rest over
 route '*' do
   if item[:content_filename]
