@@ -31,6 +31,8 @@ body {
 	width: 100%;
 	overflow-x: hidden;
 	font-family: "Helvetica Neue", "Droid Sans", Arial;
+	// Prevent default popover on a long touch
+  -webkit-touch-callout: none;
 }
 
 #marketplace {
@@ -39,8 +41,6 @@ body {
 	left: 0;
 	width: 100%;
 }
-
-
 
 #curtain {
 	z-index: 1200;

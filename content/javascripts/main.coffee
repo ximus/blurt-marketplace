@@ -27,8 +27,6 @@ $ = Zepto
 $ ->    
   window.app = new AppController
   app.loadSampleItems()
-  # Prevent default popover on a long touch
-  document.body.style.webkitTouchCallout = 'none'  # iOS
-  # $(document).bind 'touchstart', (e) -> e.preventDefault() # Android
+
   # Avoid some css transforms only supported by iOS
   $('html').addClass('ios') if $.os.ios
