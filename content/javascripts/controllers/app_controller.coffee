@@ -18,7 +18,7 @@ class window.AppController extends Spine.Controller
     items_view.bind 'itemDragStart', @showFavoritesBin
     items_view.bind 'itemDragEnd',   @hideFavoritesBin
     @el.append items_view.el 
-    items_view.addItems items
+    items_view.addItems items 
     
   itemSelected: (item) ->
     if @itemInfo.active

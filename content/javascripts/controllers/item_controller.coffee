@@ -3,8 +3,9 @@
 # Dragging inspired by http://developer.apple.com/library/safari/#documentation/InternetWeb/Conceptual/SafariVisualEffectsProgGuide/InteractiveVisualEffects/InteractiveVisualEffects.html#//apple_ref/doc/uid/TP40008032-CH3-SW3
 class window.ItemController extends Spine.Controller
   
+  @include LayoutAdapter
+  
   item: null
-  tag: 'li'
   # Defined in the constructor
   dragTarget: null
   
@@ -131,6 +132,4 @@ class window.ItemController extends Spine.Controller
         return true 
     
     false
-    
-    
     

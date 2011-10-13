@@ -4,8 +4,10 @@
 #= require 'libs/zepto/fx' 
 #= require 'libs/touch.zepto' 
 #= require 'libs/spine/spine'
-#= require 'libs/jlayout.grid' 
-#= require 'libs/jlayout.adapter' 
+
+#= require 'helpers/layout/grid_layout' 
+#= require 'helpers/layout/adapters/layout_adapter'
+#= require 'helpers/layout/adapters/items_layout_adapter' 
 #= require 'sample_items'
 
 #= require 'controllers/item_controller'

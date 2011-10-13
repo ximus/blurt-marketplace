@@ -1,16 +1,12 @@
 /*!
- * jLayout Grid Layout - JavaScript Layout Algorithms v0.41
- * !MODIFIED!
- * Licensed under the new BSD License.
- * Copyright 2008-2009, Bram Stein
- * All rights reserved.
+ * Heavily inspired from : jLayout Grid Layout - v0.41. 
+ * Javascript for better performance tuning, rather than coffee
  */
-/*global jLayout */
 
 (function () {
-	jLayout = typeof jLayout === 'undefined' ? {} : jLayout;
+	Layout = typeof Layout === 'undefined' ? {} : Layout;
 
-	jLayout.grid = function (spec, shared) {
+	Layout.Grid = function (spec, shared) {
 		var my = shared || {},
 			that = {};
 
@@ -49,6 +45,9 @@
 			  height = (container.bounds().height - (insets.top + insets.bottom) - (my.rows - 1) * my.vgap) / my.rows;
       
       width = (container.bounds().width - (insets.left + insets.right) - (my.columns - 1) * my.hgap) / my.columns;
+      
+      // Square tiles
+      if (height === 'auto') height = width;
 
       // Math with integers should be faster
       width  = Math.floor(width);
