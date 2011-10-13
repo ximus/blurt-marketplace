@@ -1,13 +1,16 @@
-require 'nanoc3/tasks'                                                                  
+require 'nanoc3/tasks'
 
-task :deploy => [
+task :deploy => :optimize do
+  system 'cap deploy'
+end                                                                  
+
+task :optimize => [
   'optimize:all', 
   'optimize:html',
   # 'optimize:css',
   'optimize:js',
   'optimize:jpeg',
-  'optimize:png',
-  'deploy:rsync' 
+  'optimize:png'
 ]
 
 namespace :optimize do
@@ -40,7 +43,4 @@ namespace :optimize do
   task :xml do
     puts `find output -name '*.xml' -exec htmlcompressor --type xml '{}' -o '{}' \\;`
   end
-
-  desc 'Optimise all image, CSS, JavaScript, HTML and XML files in the output directory'
-  task :all => [:jpeg, :png,  :js]
 end
