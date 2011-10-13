@@ -15,7 +15,7 @@ for (var i = 50 - 1; i >= 0; i--){
   }
   
   SAMPLES.push({
-    title: "Great Product is Yours",
+    title: "Great Offer for You!",
     description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     short_desc: "Buy one and get 5 Free",
     // Random image
