@@ -235,11 +235,7 @@
 	.title,
 	.controls,
 	.description {
-		padding: 12px 28px;
-	}
-	
-	.top-controls {
-		padding: 0 28px;
+		padding: 9px 28px;
 	}
 
 	.title {
@@ -266,11 +262,21 @@
 		padding-bottom: 24px;
 		text-align: center;
 	}
+	
+	.top-controls {
+		padding: 0 28px;
+	}
+	
+	.top-controls .button {
+		width: 95px;
+		padding: 10px 0;
+	}
 
 	.buy.button {
 		float: left;
 		margin-left: 20px;
 		display: inline-block;
+		width: 95px;
 	}
 	
 	.top-controls .button {
@@ -303,7 +309,7 @@
 		padding: 8px 0;
 		margin-bottom: 12px;
 		margin-top: 10px;
-		margin-right: 18px;
+		margin-left: 18px;
 	}
 
 }
@@ -361,7 +367,12 @@ and (min-width : 480px) {
 		.short-desc {
 			-webkit-box-flex: 1;
 		}
-
+	}  
+	
+	.back-side {
+		.buy.button {
+			width: 135px;
+		}
 	}
 
 }
