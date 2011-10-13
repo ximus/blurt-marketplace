@@ -2,6 +2,7 @@ class window.AppController extends Spine.Controller
   
   # This element will fade the background of the item_info_view
   curtain: $('#curtain')
+  data_source: new Yipit
     
   constructor: ->
     @el = $('#marketplace')
@@ -18,7 +19,11 @@ class window.AppController extends Spine.Controller
     items_view.bind 'itemDragStart', @showFavoritesBin
     items_view.bind 'itemDragEnd',   @hideFavoritesBin
     @el.append items_view.el 
-    items_view.addItems items 
+    items_view.addItems items
+    
+  loadSampleItems: =>
+    @data_source.fetch (items) => 
+      @loadItems(items)
     
   itemSelected: (item) ->
     if @itemInfo.active

@@ -5,10 +5,16 @@
 #= require 'libs/touch.zepto' 
 #= require 'libs/spine/spine'
 
+#= require 'utils/date'
+
+#= require 'models/item'
+#= require 'data_sources/data_source'
+#= require 'data_sources/yipit'
+#= require 'sample_items'
+
 #= require 'helpers/layout/grid_layout' 
 #= require 'helpers/layout/adapters/layout_adapter'
 #= require 'helpers/layout/adapters/items_layout_adapter' 
-#= require 'sample_items'
 
 #= require 'controllers/item_controller'
 #= require 'controllers/items_controller'
@@ -20,7 +26,7 @@ $ = Zepto
 
 $ ->    
   window.app = new AppController
-  app.loadItems(SAMPLES)
+  app.loadSampleItems()
   # Prevent default popover on a long touch
   document.body.style.webkitTouchCallout = 'none'  # iOS
   # $(document).bind 'touchstart', (e) -> e.preventDefault() # Android
