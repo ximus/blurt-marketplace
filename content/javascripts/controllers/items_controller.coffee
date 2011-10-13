@@ -1,6 +1,6 @@
 # An Items tile view
 # This view is not hardcoded into index.html, it gets appended
-class window.ItemsView extends Spine.Controller
+class window.ItemsController extends Spine.Controller
   
   tag: 'ul'
   
@@ -8,7 +8,7 @@ class window.ItemsView extends Spine.Controller
     super
   
   addItem: (item) =>
-    item_view = new ItemView(item: item)
+    item_view = new ItemController(item: item)
     # Append first because of a bug with Zepto replaceWith
     @el.append item_view.el
     item_view.render()

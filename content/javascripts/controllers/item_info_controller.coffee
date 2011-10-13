@@ -1,5 +1,5 @@
 # Popover item info
-class window.ItemInfoView extends Spine.Controller
+class window.ItemInfoController extends Spine.Controller
 
   item: null
   active: false

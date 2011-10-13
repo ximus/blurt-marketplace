@@ -1,7 +1,7 @@
 # A tile list item
 
 # Dragging inspired by http://developer.apple.com/library/safari/#documentation/InternetWeb/Conceptual/SafariVisualEffectsProgGuide/InteractiveVisualEffects/InteractiveVisualEffects.html#//apple_ref/doc/uid/TP40008032-CH3-SW3
-class window.ItemView extends Spine.Controller
+class window.ItemController extends Spine.Controller
   
   item: null
   tag: 'li'

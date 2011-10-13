@@ -1,4 +1,4 @@
-class window.App extends Spine.Controller
+class window.AppController extends Spine.Controller
   
   # This element will fade the background of the item_info_view
   curtain: $('#curtain')
@@ -7,19 +7,18 @@ class window.App extends Spine.Controller
     @el = $('#marketplace')
     super
     
-    @itemInfo = new ItemInfoView
+    @itemInfo = new ItemInfoController
     @itemInfo.bind 'nextItem', @nextItemRequested
     @itemInfo.bind 'closing',  @openCurtain
     
-    @favoritesBin = new FavoritesBinView
+    @favoritesBin = new FavoritesBinController
     
   loadItems: (items) ->
-    @items = items
-    items_view = new ItemsView
+    items_view = new ItemsController
     items_view.bind 'itemDragStart', @showFavoritesBin
     items_view.bind 'itemDragEnd',   @hideFavoritesBin
     @el.append items_view.el 
-    items_view.addItems @items
+    items_view.addItems items
     
   itemSelected: (item) ->
     if @itemInfo.active

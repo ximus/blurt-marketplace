@@ -1,4 +1,4 @@
-class window.FavoritesBinView extends Spine.Controller
+class window.FavoritesBinController extends Spine.Controller
   
   constructor: ->
     @el = $('#favorites-bin')
