@@ -35,7 +35,7 @@ class window.ItemInfoController extends Spine.Controller
     @title.html @item.title
     @description.html @item.description
     @short_desc.html @item.short_desc
-    @time_left.html "Ends in <em>#{@item.time_left.days}</em> days, <em>#{@item.time_left.hours}</em> hours" 
+    @time_left.html "Ends in <em>#{@item.getTimeLeft().days}</em> days, <em>#{@item.getTimeLeft().hours}</em> hours" 
     
   activate: ->
     # console.log '[InfoView] activate'

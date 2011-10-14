@@ -1,8 +1,17 @@
+$ = Zepto
+
 class window.Yipit extends DataSource
   
   fetch: (callback) -> 
+    $.ajax 
+      url: 'http://localhost/deals?key=Q6ZmWjNvYQjBeYPD&limit=50', 
+      success: (results) => @didFetch(results, callback),
+      dataType: 'json'
+    
+  didFetch: (results, callback) ->
+    # results = JSON.parse(results)
     items = []
-    for deal in YipitSamples.response.deals
+    for deal in results.response.deals
       item = new Item
       item.title = deal.yipit_title
       item.description = deal.title
@@ -10,4 +19,4 @@ class window.Yipit extends DataSource
       item.image_url = deal.images.image_big
       item.end_date = Date.fromISO8601(deal.end_date)
       items.push item
-    callback(items)
+    callback(items)  

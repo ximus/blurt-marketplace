@@ -1,6 +1,7 @@
 #= require 'libs/zepto/zepto'
 #= require 'libs/zepto/event'
-#= require 'libs/zepto/detect' 
+#= require 'libs/zepto/detect'
+#= require 'libs/zepto/ajax' 
 #= require 'libs/zepto/fx' 
 #= require 'libs/touch.zepto' 
 #= require 'libs/spine/spine'

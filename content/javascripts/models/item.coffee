@@ -5,6 +5,6 @@ class window.Item
   short_desc: null,
   end_date: null,
 
-  # NOTE: this could be cached
-  time_left: =>
-    difference = Date.timeDifference(@end_date, Date.now)  
+  # NOTE: This doesn't refresh on end_date change
+  getTimeLeft: =>
+    @_difference ?= Date.timeDifference(new Date(Date.now()), @end_date)  

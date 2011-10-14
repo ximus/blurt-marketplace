@@ -24,19 +24,21 @@ Date.fromISO8601 = function (string) {
 };
 
 Date.timeDifference = function (laterdate,earlierdate) {
+  console.log(laterdate,earlierdate);
   var result = {},        
       difference = laterdate.getTime() - earlierdate.getTime();
 
   result.days = Math.floor(difference/1000/60/60/24);
-  difference -= daysDifference*1000*60*60*24
+  difference -= result.days*1000*60*60*24
 
   result.hours = Math.floor(difference/1000/60/60);
-  difference -= hoursDifference*1000*60*60
+  difference -= result.hours*1000*60*60
 
   result.minutes = Math.floor(difference/1000/60);
-  difference -= minutesDifference*1000*60
+  difference -= result.minutes*1000*60
 
   result.seconds = Math.floor(difference/1000);
   
+  console.log(result);
   return result;
 }
