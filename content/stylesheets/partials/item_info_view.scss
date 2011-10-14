@@ -229,13 +229,25 @@
 }
 
 #item-info .back-side {
-	display: -webkit-box;
-	-webkit-box-orient: vertical;
 	border: 1px solid #191919;
-
+  
+	.vbox {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 56px; 
+		
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-box-align: center;
+		-webkit-box-pack: center;
+	}
 	.title,
+	.filler,
 	.controls,
 	.description {
+		-webkit-box-flex: 1;
 		padding: 9px 28px;
 	}
 
@@ -246,7 +258,6 @@
 	}
 
 	.description {
-		-webkit-box-flex: 1;
 		font-weight: 300;
 		font-size: 11pt;
 	}
@@ -264,13 +275,22 @@
 		text-align: center;
 	}
 	
-	.top-controls {
+	.bottom-controls {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
 		padding: 0 28px;
 	}
 	
-	.top-controls .button {
+	.bottom-controls .button {
 		width: 95px;
 		padding: 10px 0;
+		display: inline-block;
+		float: right;
+		&:first-child {
+			float: left;
+		}
 	}
 
 	.buy.button {
@@ -278,14 +298,6 @@
 		margin-left: 20px;
 		display: inline-block;
 		width: 95px;
-	}
-	
-	.top-controls .button {
-		display: inline-block;
-		float: right;
-		&:first-child {
-			float: left;
-		}
 	}
 
 	.back.button {
