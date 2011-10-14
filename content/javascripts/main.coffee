@@ -10,7 +10,8 @@
 
 #= require 'models/item'
 #= require 'data_sources/data_source'
-#= require 'data_sources/yipit'
+#= require 'data_sources/groupon' 
+#= require 'data_sources/yipit' 
 #= require 'sample_items'
 
 #= require 'helpers/layout/grid_layout' 

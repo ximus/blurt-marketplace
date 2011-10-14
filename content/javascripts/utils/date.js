@@ -23,7 +23,7 @@ Date.fromISO8601 = function (string) {
     return new Date(time);
 };
 
-Date.timeDifference = function (laterdate,earlierdate) {
+Date.timeDifference = function (laterdate, earlierdate) {
   console.log(laterdate,earlierdate);
   var result = {},        
       difference = laterdate.getTime() - earlierdate.getTime();

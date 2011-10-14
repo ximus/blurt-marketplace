@@ -4,7 +4,7 @@ class window.Yipit extends DataSource
   
   fetch: (callback) -> 
     $.ajax 
-      url: 'http://localhost/deals?key=Q6ZmWjNvYQjBeYPD&limit=50', 
+      url: '/deals/yipit?key=Q6ZmWjNvYQjBeYPD&limit=50', 
       success: (results) => @didFetch(results, callback),
       dataType: 'json'
     

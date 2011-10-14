@@ -2,7 +2,7 @@ class window.AppController extends Spine.Controller
   
   # This element will fade the background of the item_info_view
   curtain: $('#curtain')
-  data_source: new Yipit
+  data_source: new Groupon
     
   constructor: ->
     @el = $('#marketplace')

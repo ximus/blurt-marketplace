@@ -7,4 +7,4 @@ class window.Item
 
   # NOTE: This doesn't refresh on end_date change
   getTimeLeft: =>
-    @_difference ?= Date.timeDifference(new Date(Date.now()), @end_date)  
+    @_difference ?= Date.timeDifference(@end_date, new Date(Date.now()))  
