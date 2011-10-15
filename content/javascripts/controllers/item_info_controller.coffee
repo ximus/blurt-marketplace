@@ -42,13 +42,13 @@ class window.ItemInfoController extends Spine.Controller
     app.disableScrolling()
     @el.addClass 'active'
     @centerOnScreen()
-    $(window).bind 'orientationchange', @centerOnScreen
+    $('body').bind 'orientationchange', @centerOnScreen
     @active = true
     
   deactivate: ->
     # console.log '[InfoView] deactivate'
     to = $(window).height() + window.scrollY + 20
-    $(window).unbind 'orientationchange', @centerOnScreen
+    $('body').unbind 'orientationchange', @centerOnScreen
     @el.anim top: to, .35, 'ease', => 
       @el.removeClass 'active'
       app.enableScrolling()

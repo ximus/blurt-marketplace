@@ -94,7 +94,7 @@ class window.ItemController extends Spine.Controller
     #   (@_drag_initX - @_drag_leftDelta) + 'px, ' + 
     #   (@_drag_initY - @_drag_leftDelta) + 'px)'  
     
-    console.log "#{@_drag_initX} #{@el.offset().left}"
+    # console.log "#{@_drag_initX} #{@el.offset().left}"
       
     @el.anim translate: "0,0", .3, 'ease-out', =>
       @el.removeClass 'dragging'

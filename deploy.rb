@@ -9,7 +9,7 @@ set :deploy_via, :copy
 set :copy_exclude, [".git", ".DS_Store"] 
 set :scm, :none
 # set this path to be correct on yoru server
-set :deploy_to, "/var/sites/maximeliron.com/blurt/marketplace/demo/test" 
+set :deploy_to, "/var/sites/maximeliron.com/blurt/marketplace/demo" 
 set :current_dir, 'latest'
 set :use_sudo, false 
 set :keep_releases, 100 
@@ -20,7 +20,6 @@ namespace :deploy do
  
   desc "A macro-task that updates the code and fixes the symlink."
   task :default do
-    ::Rake::Task["optimize"].invoke 
     transaction do 
       update_code
       symlink

@@ -176,9 +176,10 @@
 	right: 0;
 	bottom: 0;
 	padding: 10px 0 10px 0;
-	box-shadow: 0px -3px 15px rgba(0, 0, 0, 0.3);
+	
+	// box-shadow: 0px -3px 15px rgba(0, 0, 0, 0.3);
 	border-top: 1px solid #B4B4B4;
-
+  
 	.title,
 	.short-desc {
 		padding: 0 0 0 20px;
@@ -191,6 +192,7 @@
 	}
 
 	.short-desc {
+		display: none;
 		font-weight: 300;
 		font-size: 9pt;
 	}
@@ -243,12 +245,20 @@
 		-webkit-box-align: center;
 		-webkit-box-pack: center;
 	}
+	
 	.title,
 	.filler,
 	.controls,
 	.description {
 		-webkit-box-flex: 1;
-		padding: 9px 28px;
+	}
+	
+	.title,
+	.filler,
+	.controls,
+	.description,
+	.bottom-controls {
+		padding: 9px 18px;
 	}
 
 	.title {
@@ -280,11 +290,10 @@
 		bottom: 0;
 		left: 0;
 		right: 0;
-		padding: 0 28px;
 	}
 	
 	.bottom-controls .button {
-		width: 95px;
+		width: 85px;
 		padding: 10px 0;
 		display: inline-block;
 		float: right;
@@ -369,8 +378,8 @@ and (min-width : 480px) {
 		-webkit-column-count: 0;
 		
 		// box-shadow: -3px 0px 15px rgba(0, 0, 0, 0.3);
-		border-left: 0;
-		border-top: 1px solid #B4B4B4;
+		border-top: 0;
+		border-left: 1px solid #B4B4B4;
 
 		.title,
 		.short-desc {
@@ -387,11 +396,28 @@ and (min-width : 480px) {
 	}  
 	
 	.back-side {
+		.title,
+		.filler,
+		.controls,
+		.description,
+		.bottom-controls {
+			padding: 9px 30px;
+		}
 		.buy.button {
 			width: 135px;
 		}
 	}
 
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+	#item-info .sidebar .short-desc {
+		// Display now that there is room
+		display: block;
+	}
 }
 
 /* iPads (portrait) ----------- */

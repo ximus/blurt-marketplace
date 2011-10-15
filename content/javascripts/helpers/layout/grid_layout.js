@@ -51,9 +51,9 @@
 
       // Math with integers should be faster
       width  = Math.floor(width);
-      height = Math.floor(height);  
+      height = Math.floor(height); 
 
-			for (i = 0, j = 1; i < my.items.length; i += 1, j += 1) {
+			for (i = 0, j = 1; i < my.items.length; i += 1, j += 1) { 
 				my.items[i].bounds({'x': x, 'y': y, 'width': width, 'height': height});
 
 				if (!my.fillVertical) {

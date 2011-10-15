@@ -23,8 +23,10 @@ class window.ItemsController extends Spine.Controller
   addItems: (items) =>
     @items = items
     @addItem(item) for item in @items
+    
+    $(window).unbind 'resize', => @doLayout()
     @doLayout()
-    $(window).bind 'resize', @layoutItems
+    $(window).bind 'resize', => @doLayout()
       
   itemDragStart: =>
     @trigger('itemDragStart')

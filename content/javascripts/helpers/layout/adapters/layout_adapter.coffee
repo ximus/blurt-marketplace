@@ -6,10 +6,14 @@ window.LayoutAdapter = # I am an interface
   isVisible: -> throw "Implement me"
   bounds: (value) -> 
     if value
-      @el.css 'top',    value.y      if value.y
-      @el.css 'height', value.height if value.height
-      @el.css 'left',   value.x      if value.x
-      @el.css 'width',  value.width  if value.width
+      # A bug in webkit scews up my positioning
+      # tmp = {}
+      # tmp.top    = value.y      if value.y
+      # tmp.height = value.height if value.height
+      # tmp.left   = value.x      if value.x
+      # tmp.width  = value.width  if value.width
+      # @el.css tmp  
+      @el[0].style.cssText = "left:#{value.x}px;top:#{value.y}px;width:#{value.width}px;height:#{value.height}px;"
     else
       tmp = @el.offset()
       return x: tmp.left, y: tmp.top, width: tmp.width, height: tmp.height

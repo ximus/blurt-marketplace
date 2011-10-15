@@ -8,10 +8,13 @@ window.ItemsLayoutAdapter =
   insets: -> left:0, right:0, top:0, bottom:0
   
   doLayout: ->
+    
+    console.log "Compute intensive layout hapenned!"
+    
     # Item width is all based on the
     # item height defined in the CSS...
     new_width = @el.parent().width()
-    item_height = @el.children().first().height()
+    # item_height = @el.children().first().height()
     
     item_height = if new_width < 320
       107

@@ -5,7 +5,6 @@ task :deploy => :optimize do
 end                                                                  
 
 task :optimize => [
-  'optimize:all', 
   'optimize:html',
   # 'optimize:css',
   'optimize:js',

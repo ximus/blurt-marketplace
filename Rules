@@ -25,6 +25,10 @@ route '/javascripts/main/' do
   '/javascripts/main.js'
 end
 
+route '/javascripts/libs/respond.min/' do
+  '/javascripts/libs/respond.min.js'
+end
+
 route '/javascripts/*' do
 end
 
