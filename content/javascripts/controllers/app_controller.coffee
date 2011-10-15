@@ -13,17 +13,14 @@ class window.AppController extends Spine.Controller
     @itemInfo.bind 'closing',  @openCurtain
     
     @favoritesBin = new FavoritesBinController
-    
-  loadItems: (items) ->
-    items_view = new ItemsController
-    items_view.bind 'itemDragStart', @showFavoritesBin
-    items_view.bind 'itemDragEnd',   @hideFavoritesBin
-    @el.append items_view.el 
-    items_view.addItems items
+    @itemsView = new ItemsController
+    @itemsView.bind 'itemDragStart', @showFavoritesBin
+    @itemsView.bind 'itemDragEnd',   @hideFavoritesBin
+    @el.append @itemsView.el
     
   loadSampleItems: =>
     @data_source.fetch (items) => 
-      @loadItems(items)
+       @itemsView.addItems items
     
   itemSelected: (item) ->
     if @itemInfo.active
