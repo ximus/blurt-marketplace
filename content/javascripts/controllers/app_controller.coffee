@@ -38,9 +38,10 @@ class window.AppController extends Spine.Controller
     document.ontouchmove = (e) -> e.preventDefault()
     
   nextItemRequested: =>
-    index = @items.indexOf(@itemInfo.item) + 1
-    index = -1 if index == @items.length - 1
-    @itemSelected @items[index]
+    items = @itemsView.items
+    index = items.indexOf(@itemInfo.item) + 1
+    index = -1 if index == items.length - 1
+    @itemSelected items[index]
     
   showFavoritesBin: =>
     @favoritesBin.activate()

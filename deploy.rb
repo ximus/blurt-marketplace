@@ -9,8 +9,8 @@ set :deploy_via, :copy
 set :copy_exclude, [".git", ".DS_Store"] 
 set :scm, :none
 # set this path to be correct on yoru server
-set :deploy_to, "/var/sites/maximeliron.com/blurt/marketplace/demo" 
-set :current_dir, 'latest'
+set :deploy_to, "/var/sites/maximeliron.com/blurt/marketplace" 
+set :current_dir, 'demo'
 set :use_sudo, false 
 set :keep_releases, 100 
 

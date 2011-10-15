@@ -169,9 +169,9 @@
 #item-info .sidebar {
 	z-index: 830;
 	position: absolute;
-	background: rgb(40,40,40);
+	background: rgba(0,0,0,.7);
 	-webkit-column-count: 2;
-	height: 105px;
+	height: 110px;
 	left: 0;
 	right: 0;
 	bottom: 0;
@@ -193,6 +193,7 @@
 
 	.short-desc {
 		display: none;
+		line-height: 106%;
 		font-weight: 300;
 		font-size: 9pt;
 	}
@@ -347,7 +348,7 @@ and (min-width : 321px) {
 }
 
 @media only screen
-and (min-width : 480px) {
+and (min-width : 440px) {
 
 	.front-side, .back-side {
 		-webkit-box-shadow: 0 0 25px rgba(0,0,0,1);
@@ -362,6 +363,8 @@ and (min-width : 480px) {
 
 	#item-info img {
 		left: 0;
+		// Groupon images are this wide at most, start fading them to black past this point.
+		-webkit-mask-image: -webkit-gradient(linear, 85% top, right top, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
 	}
 
 	#item-info .sidebar {
@@ -409,6 +412,16 @@ and (min-width : 480px) {
 	}
 
 }
+
+
+// @media only screen
+// and (min-device-height : 340px)
+// and (max-device-width : 1024px) {
+// 	#item-info .sidebar .short-desc {
+// 		// Display now that there is room
+// 		display: block;
+// 	}
+// } 
 
 /* iPads (portrait and landscape) ----------- */
 @media only screen
