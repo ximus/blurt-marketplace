@@ -42,9 +42,9 @@
       width = (container.bounds().width - (insets.left + insets.right) - (my.columns - 1) * my.hgap) / my.columns;
       
       // Square tiles
-      if (height === 'auto') height = width;
+      height = width;
       // height = (container.bounds().height - (insets.top + insets.bottom) - (my.rows - 1) * my.vgap) / my.rows;
-
+      
       // Math with integers should be faster
       width  = Math.floor(width);
       height = Math.floor(height); 
