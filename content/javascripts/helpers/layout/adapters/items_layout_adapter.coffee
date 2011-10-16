@@ -5,7 +5,7 @@ window.ItemsLayoutAdapter =
   preferredSize: ->
     width: @el.width(), height: 'auto'
     
-  insets: -> left:0, right:0, top:0, bottom:0
+  insets: -> left:12, right:12, top:12, bottom:12
   
   doLayout: ->
     
@@ -51,8 +51,8 @@ window.ItemsLayoutAdapter =
     options =
       columns: columns, 
       type: 'grid',
-      hgap: 1,
-      vgap: 1,
+      hgap: 12,
+      vgap: 12,
       items: @children
       
     Layout.Grid(options).layout(@)

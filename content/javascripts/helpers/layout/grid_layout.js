@@ -38,16 +38,12 @@
 				x = insets.left,
 				y = insets.top, 
 				height, width;
-				
-			if (container.preferredSize().height === 'auto')
-				height = my.items[0].preferredSize().height;
-			else
-			  height = (container.bounds().height - (insets.top + insets.bottom) - (my.rows - 1) * my.vgap) / my.rows;
       
       width = (container.bounds().width - (insets.left + insets.right) - (my.columns - 1) * my.hgap) / my.columns;
       
       // Square tiles
       if (height === 'auto') height = width;
+      // height = (container.bounds().height - (insets.top + insets.bottom) - (my.rows - 1) * my.vgap) / my.rows;
 
       // Math with integers should be faster
       width  = Math.floor(width);
@@ -77,15 +73,14 @@
 				my.items[i].doLayout();
 			}
 			
-			if (container.preferredSize().height === 'auto') {
-			  container.bounds({
-  			  width: (width + my.hgap) * my.columns,
-  			  height: (height + my.vgap) * my.rows
-  			})
-  			return container;
-  	  }
+
+		  container.bounds({
+			  width:  (width  + my.hgap) * my.columns + insets.right  + insets.left,
+			  height: (height + my.vgap) * my.rows    + insets.bottom + insets.top
+			})
+			return container; 
   	  
-		};
+		};                                           
 
 		function typeLayout(type) {
 			return function (container) {

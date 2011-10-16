@@ -90,7 +90,7 @@ class window.ItemInfoController extends Spine.Controller
   buyNow: -> alert 'Purchase!'
   addAsFavorite: -> alert 'You like this!'
   share: -> alert 'You want others to like this!'
-    
+
   showMoreInfo: (e) ->
     # e.stopPropagation()
     @el.addClass 'more-info'
