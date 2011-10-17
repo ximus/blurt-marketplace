@@ -160,7 +160,7 @@
 	z-index: 820;
 	position: absolute;
 	top: 0;
-	left: -80%;
+	left: -40%;
 	height: 100%;
 	// Fix for clipping problem in browsers
 	border-radius: 3px;
@@ -362,7 +362,6 @@ and (min-width : 440px) {
 	}
 
 	#item-info img {
-		left: 0;
 		// Groupon images are this wide at most, start fading them to black past this point.
 		-webkit-mask-image: -webkit-gradient(linear, 85% top, right top, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
 	}

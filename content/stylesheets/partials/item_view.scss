@@ -8,7 +8,7 @@ ul {
 		
 		border: 3px solid white;
 		border-radius: 3px;
-		-webkit-box-shadow: 0 0 8px rgb(130,130,130);
+		-webkit-box-shadow: 0 0 7px rgb(135,135,135);
 
 		-webkit-transition-property: border-width, -webkit-box-shadow;
 		-webkit-transition-duration: .1s, .1s;
@@ -17,7 +17,7 @@ ul {
 	}
 
 	li.dragging {
-		-webkit-box-shadow: 0 0 12px black;
+		-webkit-box-shadow: 0 0 11px rgb(30,30,30);;
 		z-index: 1000;
 
 		-webkit-animation-name: wobble;
