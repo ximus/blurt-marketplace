@@ -1,6 +1,6 @@
 ul {
-	-webkit-perspective: 900;
-	-webkit-transform-style: flat; 
+	// -webkit-perspective: 900;
+	// -webkit-transform-style: flat;  
 	li {
 		position: absolute;
 		overflow: hidden;
@@ -11,8 +11,8 @@ ul {
 		-webkit-box-shadow: 0 0 7px rgb(135,135,135);
 
 		-webkit-transition-property: border-width, -webkit-box-shadow;
-		-webkit-transition-duration: .1s, .1s;
 		-webkit-transition-timing-function: none, none;
+		-webkit-transition-duration: .1s, .1s;
 		-webkit-box-sizing: border-box;
 	}
 
@@ -20,9 +20,10 @@ ul {
 		-webkit-box-shadow: 0 0 11px rgb(30,30,30);;
 		z-index: 1000;
 
-		-webkit-animation-name: wobble;
-	  -webkit-animation-duration: .3s;
-	  -webkit-animation-iteration-count: 1;
+		// -webkit-animation-name: wobble;
+		// -webkit-animation-duration: .3s;
+		// 	  -webkit-animation-iteration-count: 1;
+		// -webkit-animation-timing-function: ease-in-out; 
 	}
 
 	li.dragging.on-target {
@@ -58,41 +59,38 @@ ul {
 	}
 
 }
-// @-webkit-keyframes wobble {
-//  from {
-//    -webkit-transform: scale(1);
-//  }
-// 
-//  50% {
-//    -webkit-transform: scale(1.1);
-//  }
-// 
-//  75% {
-//    -webkit-transform: scale(1);
-//  }
-// 
-//  100% {
-//    -webkit-transform: scale(1.1); 
-//  }
-// }
-
+ 
 @-webkit-keyframes wobble {
  from {
-   -webkit-transform: rotate3d(0,1,1,0);
- }
-
- 50% {
-   -webkit-transform: rotate3d(0,1,1,6deg);
+   -webkit-transform: scale(1);
  }
 
  75% {
-   -webkit-transform: rotate3d(0,1,1,-4deg);
+   -webkit-transform: scale(1.3); 
  }
 
  to {
-   -webkit-transform: rotate3d(0,1,1,0); 
+   -webkit-transform: scale(1.2); 
  }
-} 
+}   
+
+// @-webkit-keyframes wobble {
+//  from {
+//    -webkit-transform: rotate3d(0,1,1,0);
+//  }
+// 
+//  50% {
+//    -webkit-transform: rotate3d(0,1,1,6deg);
+//  }
+// 
+//  75% {
+//    -webkit-transform: rotate3d(0,1,1,-4deg);
+//  }
+// 
+//  to {
+//    -webkit-transform: rotate3d(0,1,1,0); 
+//  }
+// }   
 
 /* Smartphones (landscape) ----------- */
 @media only screen
