@@ -68,7 +68,7 @@ class window.ItemController extends Spine.Controller
 
     # console.log "newLeftDelta: #{leftDelta} newTopDelta: #{topDelta}, \n newLeft: #{@_drag_leftDelta} newTop: #{@_drag_topDelta}"
 
-    @el[0].style.webkitTransform = 'translate(' + @_drag_leftDelta + 'px, ' + @_drag_topDelta + 'px)'
+    @el[0].style.webkitTransform = 'translate3d(' + @_drag_leftDelta + 'px, ' + @_drag_topDelta + 'px, 0)'
 
     @_drag_startX = e.targetTouches[0].clientX
     @_drag_startY = e.targetTouches[0].clientY
