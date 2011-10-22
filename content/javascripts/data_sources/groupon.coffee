@@ -17,6 +17,6 @@ class window.Groupon extends DataSource
       item.description = deal.title
       item.short_desc = deal.title
       item.image_url = deal.largeImageUrl
-      item.end_date = Date.fromISO8601(deal.endAt)
+      item.end_date = if deal.endAt then Date.fromISO8601(deal.endAt) else null
       items.push item
     callback(items)
