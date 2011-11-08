@@ -24,7 +24,8 @@ class window.ItemController extends Spine.Controller
   itemSelected: ->
     # console.log "[ItemView] itemSelected"
     app.itemSelected(@item)
-    
+  
+  # TODO: Exctract this dragging logic into its own re-usable module.
   dragStart: (e) ->
     e = e.data
     # Start tracking when the first finger comes down in this element
@@ -90,10 +91,6 @@ class window.ItemController extends Spine.Controller
     
     @trigger 'dragEnd'
     
-    # @el[0].style.webkitTransform = 'translate(' + 
-    #   (@_drag_initX - @_drag_leftDelta) + 'px, ' + 
-    #   (@_drag_initY - @_drag_leftDelta) + 'px)'  
-    
     # console.log "#{@_drag_initX} #{@el.offset().left}"
       
     @el.anim translate: "0,0", .3, 'ease-out', =>
@@ -104,6 +101,7 @@ class window.ItemController extends Spine.Controller
     
     false
   
+  # TODO: Reimplement this, checking corners is not enough. 
   isOnDragTarget: ->
     return false if @dragTarget is null
     o = @el.offset() # Bounding Rect

@@ -11,6 +11,8 @@ window.ItemsLayoutAdapter =
     
     console.log "Compute intensive layout hapenned!"
     
+    # TODO: Rewrite and finalize this temporary code.
+    
     # Item width is all based on the
     # item height defined in the CSS...
     new_width = @el.parent().width()
